@@ -11,6 +11,11 @@ Grit::Blob.class_eval do
   include Linguist::BlobHelper
 end
 
+# Rugged, fetching the development branch.. 
+$LOAD_PATH.unshift File.join(File.dirname(__FILE__), "../vendor/rugged/lib")
+require 'rugged'
+
+
 # Gitlab::Git
 require_relative "gitlab_git/popen"
 require_relative "gitlab_git/blame"
